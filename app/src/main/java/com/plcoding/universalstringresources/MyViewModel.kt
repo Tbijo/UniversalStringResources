@@ -11,7 +11,10 @@ import kotlinx.coroutines.launch
 
 class MyViewModel: ViewModel() {
 
+    // sending error messages
     private val errorChannel = Channel<UiText>()
+
+    // receiving error messages
     val errors = errorChannel.receiveAsFlow()
 
     var name by mutableStateOf("")
@@ -22,6 +25,7 @@ class MyViewModel: ViewModel() {
 
     fun validateInputs() {
         viewModelScope.launch {
+            // send an error if the
             if(name.length < MIN_NAME_LENGTH) {
                 errorChannel.send(
                     UiText.StringResource(

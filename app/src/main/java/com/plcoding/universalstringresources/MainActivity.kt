@@ -27,6 +27,7 @@ class MainActivity : ComponentActivity() {
                 LaunchedEffect(key1 = scaffoldState) {
                     viewModel.errors.collect { error ->
                         scaffoldState.snackbarHostState.showSnackbar(
+                            // Here we can get the String with asString()
                             message = error.asString(context)
                         )
                     }

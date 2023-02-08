@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">UniversalStringResources</string>
+
+    <!-- Adding a %d is a place holder which can be filled by adding specific type value to the parameters -->
     <string name="min_name_length_error">The name must be at least %d characters long</string>
 </resources>
